@@ -1,0 +1,33 @@
+﻿@using MvcWepApp2.Models;
+@model DersProgrami
+@{
+    ViewBag.Title = "classs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Ekle", "Profile", FormMethod.Post)) { 
+<div class="col-md-8" style="margin-top:50px;">
+
+    <input class="hidden" name="Id" value="@Request.QueryString["Id"].ToString()" />
+
+    <table class="table table-responsive table-striped">
+
+        <tr>
+            <td>Ders Başlangıç Saati</td>
+
+            <td>Ders Bitiş Saati</td>
+
+            <td>Sınıf Adı</td>
+
+        </tr>
+        <tr>
+            <td><input type="datetime-local" name="DersBaslangic" class="form-control" /></td>
+            <td><input type="datetime-local" name="DersBitis" class="form-control" /></td>
+            <td><input type="text" name="DersAdi" class="form-control" /></td>
+
+            <td><button class="btn btn-success">Kaydet</button></td>
+
+        </tr>
+
+    </table>
+</div>}
